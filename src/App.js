@@ -6,7 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar/>
-      <main className="max-w-7xl mx-auto">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Routes>
           <Route index element={<Home />} />
         </Routes>

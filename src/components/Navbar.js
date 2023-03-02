@@ -8,8 +8,8 @@ function Navbar(props) {
         setShowDropdown(!showDropdown);
       };
     return (
-        <nav className="z-50 font-nunito bg-white shadow">
-          <div className="max-w-7xl mx-auto flex items-center justify-between py-4">
+        <nav className="z-50 font-nunito bg-white w-full shadow">
+          <div className="max-w-7xl mx-auto flex items-center justify-between p-6 md:p-4">
             <div className="text-2xl font-bold">
              <NavLink to="/">BookApp</NavLink>
             </div>
@@ -22,7 +22,7 @@ function Navbar(props) {
                     </button>
                   </div>
                   {/* User-dropdown */}
-                  <div className={`${showDropdown ? "block" : "hidden"} absolute z-50 left-1/2 -translate-x-1/2  my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow`}>
+                  <div className={`${showDropdown ? "block" : "hidden"} z-50 absolute left-3/4 -translate-x-full md:left-1/2 md:-translate-x-1/2  my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow`}>
                     <div className="px-4 py-3" role="none">
                       <p className="text-sm text-gray-900" role="none">
                         Neil Sims

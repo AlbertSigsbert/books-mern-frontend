@@ -1,10 +1,12 @@
 
+import BookList from "./BookList";
+
 
 function Main(props) {
     return (
-        <section className="bg-gray-300 col-span-3">
-            <h1>Book List</h1>
-        </section>
+        <div className="lg:col-span-3">
+            <BookList/>
+        </div>
     );
 }
 
