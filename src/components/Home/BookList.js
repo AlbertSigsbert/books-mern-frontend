@@ -19,7 +19,7 @@ function BookList() {
           `http://localhost:4000/api/books?page=${page}&limit=${limit}`
         );
         if (!response.ok) {
-          throw new Error("Something went wrong!");
+          throw new Error("Something went wrong fetching booklist!");
         }
         const data = await response.json();
         setBooks(data.books);
@@ -62,21 +62,22 @@ function BookList() {
           books.map((book) => (
             <div key={book._id} className="group relative">
               <div className="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                <img
+                <Link to={`/books/${book._id}`}>
+                  <img
                   src={book.cover}
                   alt={book.title}
                   className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                 />
+                </Link>
               </div>
               <div className="mt-4 flex justify-between">
                 <div>
                   <h3 className="text-sm text-gray-700">
-                    <Link href="#/">
+                    <Link to={`/books/${book._id}`}>
                       <span aria-hidden="true" className="absolute inset-0" />
                       {book.title}
                     </Link>
                   </h3>
-                  {/* <p className="mt-1 text-sm text-gray-500">{book.color}</p> */}
                 </div>
                 <p className="text-sm font-medium text-gray-900">
                   ${book.price}
